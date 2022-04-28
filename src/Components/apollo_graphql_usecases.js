@@ -31,10 +31,12 @@ const client = new ApolloClient({
   link: link,
 });
 
+
+//<Form></Form>
 function Apollo_Graphql_Usecases() {
   return (
     <ApolloProvider client={client}>
-      <Form></Form>
+      <GetUsers></GetUsers>
     </ApolloProvider>
   );
 }
