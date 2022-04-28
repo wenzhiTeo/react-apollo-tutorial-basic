@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import ReactDOM from "react-dom/client";
-import "./index.css";
 import {
   ApolloClient,
   InMemoryCache,
@@ -9,6 +8,8 @@ import {
   gql,
   useLazyQuery,
 } from "@apollo/client";
+
+// Apollo Dog Query
 
 const DOG_URI = "https://71z1g.sse.codesandbox.io/";
 
@@ -84,7 +85,12 @@ function DelayedQuery() {
   return (
     <div>
       <p>Delayed Query</p>
-      {data?.dog && <img src={data.dog.displayImage} style={{ height: 100, width: 100 }}></img>}
+      {data?.dog && (
+        <img
+          src={data.dog.displayImage}
+          style={{ height: 100, width: 100 }}
+        ></img>
+      )}
       <br></br>
       <button onClick={() => getDog({ variables: { breed: "bulldog" } })}>
         {" "}
@@ -113,11 +119,14 @@ function App() {
   );
 }
 
-const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(
-  <>
-    <ApolloProvider client={client}>
-      <App></App>
-    </ApolloProvider>
-  </>
-);
+function ApolloQuery() {
+  return (
+    <>
+      <ApolloProvider client={client}>
+        <App></App>
+      </ApolloProvider>
+    </>
+  );
+}
+
+export default ApolloQuery

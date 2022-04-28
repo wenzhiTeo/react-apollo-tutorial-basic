@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import ReactDOM from "react-dom/client";
-import "./index.css";
 import {
   ApolloClient,
   InMemoryCache,
@@ -40,7 +39,6 @@ function ExchangeRates() {
   ));
 }
 
-
 function App() {
   return (
     <div>
@@ -50,11 +48,14 @@ function App() {
   );
 }
 
-const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(
-  <>
-    <ApolloProvider client={client}>
-      <App></App>
-    </ApolloProvider>
-  </>
-);
+function ApolloQuickstart() {
+  return (
+    <>
+      <ApolloProvider client={client}>
+        <App></App>
+      </ApolloProvider>
+    </>
+  );
+}
+
+export default ApolloQuickstart;
