@@ -1,6 +1,6 @@
-# This repository included simple Apollo usecase as quickstart, query and mutation
+This repository included simple Apollo usecase as quickstart, query and mutation
 
-
+---
 
 # Getting Started with Create React App
 
